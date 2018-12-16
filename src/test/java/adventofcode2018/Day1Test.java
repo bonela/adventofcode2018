@@ -2,14 +2,7 @@ package adventofcode2018;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.assertj.core.util.Arrays;
-import org.junit.Before;
 import org.junit.Test;
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 public class Day1Test {
 
