@@ -10,23 +10,26 @@ public class Day2 {
 	final String charInCodeID = "abcdefghijklmnopqrstuvwxyz";
 
 	public int checkSumByIDs(List<String> collectIDs) {
+	
+		return Math.multiplyExact(this.countOcurrences(2, collectIDs), this.countOcurrences(3, collectIDs));
 
-		final List<String> codeIDTwice = new ArrayList<>();
-		final List<String> codeIDThree = new ArrayList<>();
-
+	}
+	
+	private int countOcurrences(int times, List<String>  collectIDs) {
+		
+		final List<String> collectForTimes = new ArrayList<>();
+		
 		for (int z = 0; z < charInCodeID.length(); z++) {
 			char c = charInCodeID.charAt(z);
 
-			collectIDs.stream().filter((current) -> StringUtils.countOccurrencesOf(current, String.valueOf(c)) == 2 
-					&& !codeIDTwice.contains(current))
-					.forEach((current) -> codeIDTwice.add(current.toString()));
-			collectIDs.stream().filter((current) -> StringUtils.countOccurrencesOf(current, String.valueOf(c)) == 3
-					&& !codeIDThree.contains(current))
-					.forEach((current) -> codeIDThree.add(current.toString()));
+			 collectIDs.stream().filter((current) -> StringUtils.countOccurrencesOf(current, String.valueOf(c)) == times
+					&& !collectForTimes.contains(current))
+					.forEach((current) -> collectForTimes.add(current.toString()));
 		}
-
-		return Math.multiplyExact(codeIDTwice.size(), codeIDThree.size());
-
+		
+		return collectForTimes.size();
+		
 	}
+	 
 
 }
