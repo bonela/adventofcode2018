@@ -13,7 +13,7 @@ public class Day3Test {
 		
 		String claim = "#123 @ 3,2: 5x4";
 		String[] infoClaim = claim.split("#\\@\\:\\x");
-		
+		System.out.printl("Only a test to git");
 		assertEquals("123", infoClaim[0]);
 		
 	}
